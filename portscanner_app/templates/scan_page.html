@@ -1,6 +1,38 @@
-<!-- templates/scan_page.html -->
-
 <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Port Scanner</title>
+  </head>
+  <body>
+    <h1>Port Scanner</h1>
+    <button id="scanButton">Scan Network</button>
+    <div id="outputContainer"></div>
+
+    <script>
+      document
+        .getElementById("scanButton")
+        .addEventListener("click", async () => {
+          const outputContainer = document.getElementById("outputContainer");
+          outputContainer.innerHTML = "Scanning IPs...";
+
+          try {
+            const response = await fetch("/scan/");
+            const result = await response.json();
+            const formattedOutput = result.output.replace(/\n/g, "<br>");
+            outputContainer.innerHTML = formattedOutput;
+          } catch (error) {
+            console.error("Error:", error);
+            outputContainer.innerHTML =
+              "Error during scanning. Please try again.";
+          }
+        });
+    </script>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -28,7 +60,7 @@
         });
     </script>
 
-    <!--<script>
+    <script>
       document
         .getElementById("scanButton")
         .addEventListener("click", async () => {
@@ -41,6 +73,6 @@
             console.error("Error:", error);
           }
         });
-    </script> -->
+    </script> 
   </body>
-</html>
+</html> -->
