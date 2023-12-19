@@ -1,0 +1,46 @@
+<!-- templates/scan_page.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Port Scanner</title>
+  </head>
+  <body>
+    <h1>Port Scanner</h1>
+    <button id="scanButton">Scan Network</button>
+    <div id="outputContainer"></div>
+
+    <script>
+      document
+        .getElementById("scanButton")
+        .addEventListener("click", async () => {
+          try {
+            const response = await fetch("/scan/");
+            const result = await response.json(); // Parse JSON response
+            const formattedOutput = result.output.replace(/\n/g, "<br>"); // Replace newline characters with <br>
+            document.getElementById("outputContainer").innerHTML =
+              formattedOutput;
+          } catch (error) {
+            console.error("Error:", error);
+          }
+        });
+    </script>
+
+    <!--<script>
+      document
+        .getElementById("scanButton")
+        .addEventListener("click", async () => {
+          try {
+            const response = await fetch("/scan/");
+            const result = await response.text();
+            console.log("Response:", result);
+            document.getElementById("outputContainer").innerHTML = result;
+          } catch (error) {
+            console.error("Error:", error);
+          }
+        });
+    </script> -->
+  </body>
+</html>

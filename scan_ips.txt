@@ -1,0 +1,11 @@
+IP 192.168.2.1 is UP with open ports: 80, 443, 53, 22
+IP 192.168.2.15 is UP with open ports: 139, 445, 135
+IP 192.168.2.17 is UP with open ports: 912, 902, 135
+IP 192.168.2.23 is UP with open ports: 443, 22
+IP 192.168.2.27 is UP with open ports: 443, 22
+IP 192.168.2.29 is UP with open ports: 139, 445, 135
+IP 192.168.2.33 is UP with open ports: 902, 135, 139, 912, 445
+IP 192.168.2.36 is UP with open ports: 139, 445, 135
+IP 192.168.2.37 is UP with open ports: 139, 445, 135
+IP 192.168.2.40 is UP with open ports: 912, 902
+IP 192.168.2.46 is UP with open ports: 139, 445, 135
